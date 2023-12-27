@@ -12,3 +12,13 @@ tar xzfv OpenJDK17U-jdk_arm_linux_hotspot_17.0.1_12.tar.gz
 
 # check version
 ./jdk-17.0.1+12/bin/java -version
+
+# update alternatives
+update-alternatives --install /usr/bin/java java /opt/jdk/jdk-17.0.1+12/bin/java 100
+update-alternatives --install /usr/bin/java java /opt/jdk/jdk-17.0.1+12/bin/javac 100
+
+# check links - should be pointing to 17
+update-alternatives --display java
+update-alternatives --display javac
+
+
